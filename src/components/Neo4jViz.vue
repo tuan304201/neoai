@@ -1,14 +1,45 @@
 <template>
-  <div id="viz" style="width: 100%; height: 800px; border: 1px solid #ccc"></div>
+  <div id="viz" style="width: 100%; height: 100vh"></div>
 </template>
 
 <script setup>
 import { onMounted } from "vue";
 import Neovis from "neovis.js";
 
-const expandedMap = new Map();
-
 onMounted(() => {
+  // Fake alerts data
+  const alerts = [
+    {
+      alertId: "ALERT-001",
+      hostId: "HOST-E095176FF0424EB4",
+      title: "CPU usage high",
+      description: "CPU usage over 90% for 10 minutes",
+      severity: "high",
+      isRootCause: true,
+    },
+    {
+      alertId: "ALERT-002",
+      hostId: "HOST-OTHERID123",
+      title: "Disk failure",
+      description: "Disk /dev/sda1 read errors",
+      severity: "critical",
+      isRootCause: false,
+    },
+    {
+      alertId: "ALERT-003",
+      hostId: "HOST-E095176FF0424EB4",
+      title: "Memory leak detected",
+      description: "Memory consumption increasing steadily",
+      severity: "medium",
+      isRootCause: false,
+    },
+  ];
+
+  // Function to get root cause alerts by host ID
+  const getRootCauseAlertsByHostId = (hostId) => {
+    return alerts.filter((alert) => alert.hostId === hostId && alert.isRootCause === true);
+  };
+
   const config = {
     containerId: "viz",
     neo4j: {
@@ -20,7 +51,7 @@ onMounted(() => {
       nodes: {
         shape: "circle",
         font: {
-          size: 12,
+          size: 8,
           multi: "html",
           color: "#000",
           face: "arial",
@@ -28,13 +59,22 @@ onMounted(() => {
           strokeWidth: 0,
         },
         widthConstraint: {
-          maximum: 100,
+          maximum: 50,
+          minimum: 50,
         },
         scaling: {
           label: {
             enabled: true,
             min: 8,
-            max: 10,
+            max: 12,
+          },
+        },
+        color: {
+          border: "#888",
+          background: "#eee",
+          highlight: {
+            border: "#555",
+            background: "#ddd",
           },
         },
       },
@@ -67,20 +107,166 @@ onMounted(() => {
       },
     },
     labels: {
-      KubernetesCluster: { label: "id", size: 10 },
-      EC2Instance: { label: "id", size: 10 },
-      Host: { label: "id", size: 10 },
-      Disk: { label: "id", size: 10 },
-      ContainerGroup: { label: "id", size: 10 },
-      ContainerGroupInstance: { label: "id", size: 10 },
-      ProcessGroup: { label: "id", size: 10 },
-      ProcessGroupInstance: { label: "id", size: 10 },
-      Service: { label: "id", size: 10 },
-      AvailabilityZone: { label: "id", size: 10 },
+      Node: {
+        size: 10,
+        [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+          function: {
+            label: (node) => {
+              // Hiển thị tên type nếu có, ví dụ: "KUBERNETES_CLUSTER"
+              return node.properties?.type;
+            },
+            title: (node) => {
+              return ` Entity ID: ${node.properties?.entityId || node.id}
+                       Name: ${node.properties?.displayName || "-"}
+                       Type: ${node.properties?.type || "-"}
+                    `;
+            },
+          },
+        },
+      },
+      // KubernetesCluster: {
+      //   label: "Kubernetes",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "Kubernetes";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // EC2Instance: {
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "EC2";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // Host: {
+      //   label: "HOST",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // Disk: {
+      //   label: "DISK",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "DISK";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // ContainerGroup: {
+      //   label: "Container Group",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "Container Group";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // ContainerGroupInstance: {
+      //   label: "Container Group Instance",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "Container Group Instance";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // ProcessGroup: {
+      //   label: "Process Group",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "Process Group";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // ProcessGroupInstance: {
+      //   label: "Process Group Instance",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "Process Group Instance";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // Service: {
+      //   label: "Service",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return node.properties.entityId;
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
+      // AvailabilityZone: {
+      //   label: "Availability Zone",
+      //   size: 10,
+      //   [Neovis.NEOVIS_ADVANCED_CONFIG]: {
+      //     function: {
+      //       label: (node) => {
+      //         return "Availability Zone";
+      //       },
+      //       title: (node) => {
+      //         return `ID: ${node.properties.entityId || node.id}`;
+      //       },
+      //     },
+      //   },
+      // },
     },
     initialCypher: `
-      MATCH (n:Host)
-      RETURN n
+      MATCH (n)-[r]->(m)
+      RETURN n, r, m
     `,
   };
 
@@ -88,92 +274,130 @@ onMounted(() => {
 
   viz.render();
 
-  viz.registerOnEvent("clickNode", async (event) => {
-    console.log("Click event:", event); // Debug log
+  viz.registerOnEvent("completed", () => {
+    const visJsNetwork = viz.network;
+    if (!visJsNetwork) return;
 
-    // Kiểm tra các cách có thể lấy nodeId từ event
-    let nodeId = event.nodeId || event.node || event.nodes?.[0];
+    const allNodes = visJsNetwork.body.data.nodes.get();
 
-    // Nếu vẫn undefined, thử lấy từ event object khác
-    if (!nodeId && event.pointer && event.pointer.DOM) {
-      const network = viz.network;
-      const nodeIds = network.getNodeAt(event.pointer.DOM);
-      nodeId = nodeIds;
+    // Setup blinking animation for HOST nodes
+    const flashingNodes = allNodes.filter((node) => {
+      return node.label?.toUpperCase() === "HOST";
+    });
+
+    let start = null;
+    const duration = 1000;
+
+    function animateBlink(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+
+      const alpha = (Math.sin((elapsed / duration) * Math.PI * 2) + 1) / 2;
+
+      const r = 255;
+      const g = Math.round(255 * (1 - alpha));
+      const b = Math.round(255 * (1 - alpha));
+
+      const backgroundColor = `rgba(${r},${g},${b},1)`;
+
+      flashingNodes.forEach((node) => {
+        visJsNetwork.body.data.nodes.update({
+          id: node.id,
+          color: {
+            background: backgroundColor,
+            border: "#555",
+          },
+        });
+      });
+
+      requestAnimationFrame(animateBlink);
     }
 
-    console.log("Node ID:", nodeId); // Debug log
+    requestAnimationFrame(animateBlink);
 
-    // Kiểm tra nodeId hợp lệ
-    if (!nodeId || nodeId === undefined || nodeId === null) {
-      console.error("NodeId is undefined or null");
-      return;
-    }
+    // Add click event listener for nodes
+    // visJsNetwork.on("click", function (params) {
+    //   if (params.nodes.length > 0) {
+    //     const nodeId = params.nodes[0];
+    //     const clickedNode = visJsNetwork.body.data.nodes.get(nodeId);
 
-    const network = viz.network;
-    const nodesDataset = network.body.data.nodes;
-    const edgesDataset = network.body.data.edges;
+    //     // Check if clicked node is a HOST
+    //     if (clickedNode && clickedNode.label?.toUpperCase() === "HOST") {
+    //       // Get the host ID from node properties
+    //       const hostId = clickedNode.title || clickedNode.id;
 
-    // Nếu node không còn trong graph (vì đã bị clear trước đó)
-    if (!nodesDataset.get(nodeId)) {
-      // Lấy nodeId cuối cùng đã được mở rộng
-      const lastExpanded = [...expandedMap.entries()][0];
-      if (!lastExpanded) return;
+    //       // Find root cause alerts for this host
+    //       const hostAlerts = getRootCauseAlertsByHostId(hostId);
 
-      const [oldNodeId, info] = lastExpanded;
-      const label = info.label || "Host";
+    //       if (hostAlerts.length > 0) {
+    //         console.log(`🚨 Root Cause Alerts for Host: ${hostId}`);
+    //         console.log("=".repeat(50));
 
-      // Thu gọn lại
-      nodesDataset.clear();
-      edgesDataset.clear();
-      expandedMap.clear();
+    //         hostAlerts.forEach((alert, index) => {
+    //           console.log(`Root Cause Alert ${index + 1}:`);
+    //           console.log(`  ID: ${alert.alertId}`);
+    //           console.log(`  Title: ${alert.title}`);
+    //           console.log(`  Description: ${alert.description}`);
+    //           console.log(`  Severity: ${alert.severity.toUpperCase()}`);
+    //           console.log("-".repeat(30));
+    //         });
 
-      await viz.updateWithCypher(`MATCH (n:\`${label}\`) RETURN n`);
-      return;
-    }
+    //         // Also display summary for root cause alerts only
+    //         const criticalCount = hostAlerts.filter((a) => a.severity === "critical").length;
+    //         const highCount = hostAlerts.filter((a) => a.severity === "high").length;
+    //         const mediumCount = hostAlerts.filter((a) => a.severity === "medium").length;
 
-    // Nếu node đang mở → thu lại
-    if (expandedMap.has(nodeId)) {
-      const label = expandedMap.get(nodeId).label || "Host";
+    //         console.log("📊 Root Cause Summary:");
+    //         console.log(`  Total Root Cause Alerts: ${hostAlerts.length}`);
+    //         console.log(`  Critical: ${criticalCount}, High: ${highCount}, Medium: ${mediumCount}`);
+    //       } else {
+    //         console.log(`✅ No root cause alerts found for Host: ${hostId}`);
+    //       }
+    //     }
+    //   }
+    // });
 
-      nodesDataset.clear();
-      edgesDataset.clear();
-      expandedMap.clear();
+    // Hiển thị thông tin node khi click vào
+    visJsNetwork.on("click", function (params) {
+      if (params.nodes.length > 0) {
+        const nodeId = params.nodes[0];
+        const clickedNode = visJsNetwork.body.data.nodes.get(nodeId);
 
-      // Không cần nodeId khi thu lại, chỉ cần load lại tất cả nodes của label đó
-      await viz.updateWithCypher(`MATCH (n:\`${label}\`) RETURN n`);
-      return; // Thêm return để không chạy phần expand bên dưới
-    } else {
-      // Mở rộng
-      const clickedNode = nodesDataset.get(nodeId);
-      const label = clickedNode?.labels?.[0] || "Host";
+        console.log("📌 Node được click:");
+        console.log(clickedNode); // ⚠️ In ra toàn bộ node để xem có thuộc tính gì
 
-      const beforeNodeIds = new Set(nodesDataset.getIds());
-      const beforeEdgeIds = new Set(edgesDataset.getIds());
+        // Nếu có node label là HOST, xử lý tiếp
+        if (clickedNode && clickedNode.label?.toUpperCase() === "HOST") {
+          const hostId = clickedNode.title || clickedNode.id;
 
-      // Đảm bảo nodeId là số hợp lệ trước khi dùng trong query
-      const numericNodeId = parseInt(nodeId);
-      if (isNaN(numericNodeId)) {
-        console.error("NodeId is not a valid number:", nodeId);
-        return;
+          const hostAlerts = getRootCauseAlertsByHostId(hostId);
+
+          if (hostAlerts.length > 0) {
+            console.log(`🚨 Root Cause Alerts for Host: ${hostId}`);
+            console.log("=".repeat(50));
+
+            hostAlerts.forEach((alert, index) => {
+              console.log(`Root Cause Alert ${index + 1}:`);
+              console.log(`  ID: ${alert.alertId}`);
+              console.log(`  Title: ${alert.title}`);
+              console.log(`  Description: ${alert.description}`);
+              console.log(`  Severity: ${alert.severity.toUpperCase()}`);
+              console.log("-".repeat(30));
+            });
+
+            const criticalCount = hostAlerts.filter((a) => a.severity === "critical").length;
+            const highCount = hostAlerts.filter((a) => a.severity === "high").length;
+            const mediumCount = hostAlerts.filter((a) => a.severity === "medium").length;
+
+            console.log("📊 Root Cause Summary:");
+            console.log(`  Total Root Cause Alerts: ${hostAlerts.length}`);
+            console.log(`  Critical: ${criticalCount}, High: ${highCount}, Medium: ${mediumCount}`);
+          } else {
+            console.log(`✅ No root cause alerts found for Host: ${hostId}`);
+          }
+        }
       }
-
-      console.log("Expanding node with ID:", numericNodeId); // Debug log
-
-      await viz.updateWithCypher(`
-        MATCH (n)-[r]-(m)
-        WHERE id(n) = ${numericNodeId}
-        RETURN n, r, m
-      `);
-
-      const afterNodeIds = new Set(nodesDataset.getIds());
-      const afterEdgeIds = new Set(edgesDataset.getIds());
-
-      const addedNodes = [...afterNodeIds].filter((id) => !beforeNodeIds.has(id));
-      const addedEdges = [...afterEdgeIds].filter((id) => !beforeEdgeIds.has(id));
-
-      // Lưu nodeId dạng string vào expandedMap để tránh lỗi type
-      expandedMap.set(nodeId, { nodes: addedNodes, edges: addedEdges, label });
-    }
+    });
   });
 });
 </script>

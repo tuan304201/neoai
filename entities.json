@@ -1,0 +1,1167 @@
+[
+  {
+    "entityId": "CONTAINER_GROUP_INSTANCE-04952EDAE271E8F3",
+    "type": "CONTAINER_GROUP_INSTANCE",
+    "displayName": "twistlock-defender-ds-zfsrp twistlock-defender",
+    "firstSeenTms": 1747361445401,
+    "lastSeenTms": 1747366547626,
+    "properties": {
+      "containerizationType": "CONTAINERD_CRI",
+      "detectedName": "twistlock-defender-ds-zfsrp twistlock-defender",
+      "containerImageId": "sha256:469a33f7c1a560d10dea9c34f4aafc6a615f7f8b8e6de57fd8e6d720fb41341e",
+      "metadata": [
+        { "key": "KUBERNETES_FULL_POD_NAME", "value": "twistlock-defender-ds-zfsrp" },
+        { "key": "KUBERNETES_CONTAINER_NAME", "value": "twistlock-defender" },
+        { "key": "KUBERNETES_NAMESPACE", "value": "twistlock" },
+        { "key": "KUBERNETES_BASE_POD_NAME", "value": "twistlock-defender-ds" },
+        { "key": "KUBERNETES_CLUSTER_ID", "value": "6d768ac4-09ba-4e05-8247-7fbfabb47379" },
+        { "key": "KUBERNETES_RULE_RESULT", "value": "twistlock-defender-ds" },
+        { "key": "KUBERNETES_POD_UID", "value": "60272810-d058-4ba3-a064-41fa21b24340" }
+      ],
+      "containerProperties": [
+        {
+          "containerName": "twistlock-defender",
+          "containerId": "3c081570164d9c7d39e3a624d701596fc7e0eedff2289887302e3963927740bb"
+        }
+      ],
+      "containerNamesTruncated": false,
+      "containerNames": ["twistlock-defender"]
+    },
+    "tags": [],
+    "managementZones": [
+      { "id": "2065165628151903432", "name": "CDcorePT" },
+      { "id": "-7151761915816887563", "name": "RDB PT" },
+      { "id": "4309613223577531562", "name": "CDMax_PT" }
+    ],
+    "icon": {
+      "primaryIconType": "container"
+    },
+    "fromRelationships": {
+      "isCgiOfHost": [{ "id": "HOST-3337FCF1C6F623C2", "type": "HOST" }],
+      "isCgiOfCa": [{ "id": "CLOUD_APPLICATION-9730D8809660C10E", "type": "CLOUD_APPLICATION" }],
+      "isCgiOfCai": [{ "id": "CLOUD_APPLICATION_INSTANCE-1C3FBC472FC83EFF", "type": "CLOUD_APPLICATION_INSTANCE" }],
+      "isCgiOfCluster": [{ "id": "KUBERNETES_CLUSTER-46633836AB3EE44C", "type": "KUBERNETES_CLUSTER" }],
+      "isCgiOfNamespace": [
+        { "id": "CLOUD_APPLICATION_NAMESPACE-209A8A396FB92E83", "type": "CLOUD_APPLICATION_NAMESPACE" }
+      ],
+      "isInstanceOf": [{ "id": "CONTAINER_GROUP-A15EFC34530BA988", "type": "CONTAINER_GROUP" }]
+    },
+    "toRelationships": {
+      "isMainPgiOfCgi": [{ "id": "PROCESS_GROUP_INSTANCE-F69B10A45510A39A", "type": "PROCESS_GROUP_INSTANCE" }],
+      "isPgiOfCgi": [{ "id": "PROCESS_GROUP_INSTANCE-F69B10A45510A39A", "type": "PROCESS_GROUP_INSTANCE" }]
+    }
+  },
+  {
+    "entityId": "CONTAINER_GROUP-0BF3058D4F9B5C66",
+    "type": "CONTAINER_GROUP",
+    "displayName": "rdb-customer-support-dis-*",
+    "firstSeenTms": 1710150405038,
+    "lastSeenTms": 1747366536927,
+    "properties": {
+      "detectedName": "rdb-customer-support-dis-*",
+      "metadata": [
+        {
+          "key": "KUBERNETES_CONTAINER_NAME",
+          "value": "rdb-customer-support-dis"
+        },
+        {
+          "key": "KUBERNETES_FULL_POD_NAME",
+          "value": "rdb-customer-support-dis-7b95f98cc4-gf2k8"
+        },
+        {
+          "key": "KUBERNETES_NAMESPACE",
+          "value": "rdb-pt"
+        },
+        {
+          "key": "KUBERNETES_CLUSTER_ID",
+          "value": "6d768ac4-09ba-4e05-8247-7fbfabb47379"
+        },
+        {
+          "key": "KUBERNETES_BASE_POD_NAME",
+          "value": "rdb-customer-support-dis-*"
+        },
+        {
+          "key": "KUBERNETES_RULE_RESULT",
+          "value": "rdb-customer-support-dis-*"
+        },
+        {
+          "key": "KUBERNETES_POD_UID",
+          "value": "d3e2234c-7e6e-44db-a1d0-a3369c56d18a"
+        }
+      ]
+    },
+    "tags": [],
+    "managementZones": [
+      {
+        "id": "-7151761915816887563",
+        "name": "RDB PT"
+      }
+    ],
+    "icon": {
+      "primaryIconType": "unknown"
+    },
+    "toRelationships": {
+      "isPgOfCg": [
+        {
+          "id": "PROCESS_GROUP-C7248558C71DA498",
+          "type": "PROCESS_GROUP"
+        }
+      ],
+      "isInstanceOf": [
+        {
+          "id": "CONTAINER_GROUP_INSTANCE-65ADE95354748229",
+          "type": "CONTAINER_GROUP_INSTANCE"
+        }
+      ]
+    }
+  },
+  {
+    "entityId": "DISK-03435E43705B1E76",
+    "type": "DISK",
+    "displayName": "/var",
+    "firstSeenTms": 1744107566618,
+    "lastSeenTms": 1747366539949,
+    "properties": {
+      "detectedName": "/var"
+    },
+    "tags": [],
+    "icon": {
+      "primaryIconType": "unknown"
+    },
+    "fromRelationships": {
+      "isDiskOf": [
+        {
+          "id": "HOST-E095176FF0424EB4",
+          "type": "HOST"
+        }
+      ]
+    },
+    "toRelationships": {}
+  },
+  {
+    "entityId": "DISK-1A12CBAA2F4C5DEA",
+    "type": "DISK",
+    "displayName": "/",
+    "firstSeenTms": 1747361262155,
+    "lastSeenTms": 1747366536927,
+    "properties": {
+      "detectedName": "/"
+    },
+    "tags": [],
+    "icon": {
+      "primaryIconType": "unknown"
+    },
+    "fromRelationships": {
+      "isDiskOf": [
+        {
+          "id": "HOST-0F210CBA3679587C",
+          "type": "HOST"
+        }
+      ]
+    },
+    "toRelationships": {}
+  },
+  {
+    "entityId": "EC2_INSTANCE-53D378039FE7E031",
+    "type": "EC2_INSTANCE",
+    "displayName": "UNKNOWN EC2_INSTANCE-53D378039FE7E031",
+    "firstSeenTms": 1747361262155,
+    "lastSeenTms": 1747366536927,
+    "properties": {
+      "localHostName": "ip-10-34-174-185.ap-southeast-1.compute.internal",
+      "amiId": "ami-0c402f36a4813e2a0",
+      "awsInstanceId": "i-016d0652d998476e8",
+      "regionName": "ap-southeast-1",
+      "awsInstanceType": "r6i.2xlarge",
+      "localIp": "10.34.174.185",
+      "awsSecurityGroup": ["tcb-pt-rdb-eks-node-additional", "eks-cluster-sg-tcb-pt-rdb-cluster-1692441458"]
+    },
+    "tags": [],
+    "managementZones": [
+      {
+        "id": "2065165628151903432",
+        "name": "CDcorePT"
+      },
+      {
+        "id": "3514327424812790139",
+        "name": "TCBPay"
+      },
+      {
+        "id": "4309613223577531562",
+        "name": "CDMax_PT"
+      },
+      {
+        "id": "-7151761915816887563",
+        "name": "RDB PT"
+      }
+    ],
+    "icon": {
+      "primaryIconType": "ec2"
+    },
+    "fromRelationships": {},
+    "toRelationships": {
+      "isSiteOf": [
+        {
+          "id": "AWS_AVAILABILITY_ZONE-F4F0EFE8B8C7FC62",
+          "type": "AWS_AVAILABILITY_ZONE"
+        }
+      ],
+      "runsOn": [
+        {
+          "id": "HOST-0F210CBA3679587C",
+          "type": "HOST"
+        }
+      ]
+    }
+  },
+  {
+    "entityId": "HOST-E095176FF0424EB4",
+    "type": "HOST",
+    "displayName": "tcb-pt-rdb-heimdall-proxy-baseline",
+    "firstSeenTms": 1744107566618,
+    "lastSeenTms": 1747366539949,
+    "properties": {
+      "bitness": "64",
+      "autoInjection": "ENABLED",
+      "installerTrackedDownload": false,
+      "additionalSystemInfo": [
+        { "value": "0", "key": "system.processor.frequency.max" },
+        { "value": "Amazon EC2", "key": "system.vendor" },
+        { "value": "Amazon EC2", "key": "system.board.vendor" },
+        { "value": "0", "key": "system.processor.frequency.min" },
+        { "value": "3780935680", "key": "system.memory.size" },
+        { "value": "AMD EPYC 7571", "key": "system.processor.model" },
+        { "value": "t3a.medium", "key": "system.model" },
+        { "value": "x86", "key": "system.architecture" }
+      ],
+      "monitoringMode": "FULL_STACK",
+      "osArchitecture": "X86",
+      "osVersion": "Red Hat Enterprise Linux 8.9 (Ootpa) (kernel 4.18.0-513.18.1.el8_9.x86_64)",
+      "installerPotentialProblem": false,
+      "cloudType": "EC2",
+      "macAddresses": ["02:82:3B:1D:09:29"],
+      "osType": "LINUX",
+      "state": "RUNNING",
+      "physicalMemory": 3780935680,
+      "detectedName": "ip-10-34-173-202.ap-southeast-1.compute.internal",
+      "installerVersion": "1.299.50.20240930-123825",
+      "standalone": false,
+      "ipAddress": ["10.34.173.202"],
+      "hypervisorType": "AWS_NITRO",
+      "hostGroupName": "heimdall-pt3",
+      "networkZone": "default",
+      "standaloneSpecialAgentsOnly": false,
+      "isMonitoringCandidate": false,
+      "logicalCpuCores": 2,
+      "cpuCores": 1,
+      "ebpfDiscoveryMonitored": false,
+      "memoryTotal": 3780935680,
+      "awsNameTag": "tcb-pt-rdb-heimdall-proxy-baseline",
+      "installerSupportAlert": false
+    },
+    "tags": [
+      {
+        "context": "ENVIRONMENT",
+        "key": "PT3:rdb",
+        "stringRepresentation": "[Environment]PT3\\:rdb"
+      },
+      {
+        "context": "CONTEXTLESS",
+        "key": "PT3",
+        "value": "rdb",
+        "stringRepresentation": "PT3:rdb"
+      }
+    ],
+    "managementZones": [
+      {
+        "id": "-7151761915816887563",
+        "name": "RDB PT"
+      }
+    ],
+    "icon": {
+      "primaryIconType": "linux",
+      "secondaryIconType": "ec2"
+    },
+    "fromRelationships": {
+      "isNetworkClientOfHost": [
+        { "id": "HOST-49DFBFFF91F63F48", "type": "HOST" },
+        { "id": "HOST-2A751BE0E832036D", "type": "HOST" },
+        { "id": "HOST-E095176FF0424EB4", "type": "HOST" },
+        { "id": "HOST-2CB354A9E5D5ABF1", "type": "HOST" },
+        { "id": "HOST-A88CAF4CF9204342", "type": "HOST" }
+      ],
+      "runsOn": [{ "id": "EC2_INSTANCE-F485A82759D83690", "type": "EC2_INSTANCE" }],
+      "isInstanceOf": [{ "id": "HOST_GROUP-B5181046C4F5EACD", "type": "HOST_GROUP" }]
+    },
+    "toRelationships": {
+      "isSiteOf": [{ "id": "AWS_AVAILABILITY_ZONE-134473C7CC0C725F", "type": "AWS_AVAILABILITY_ZONE" }],
+      "isNetworkClientOfHost": [{ "id": "HOST-E095176FF0424EB4", "type": "HOST" }],
+      "isProcessOf": [
+        { "id": "PROCESS_GROUP_INSTANCE-45DAB090ACF3ECD7", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-4FE2C5CB5EC967FF", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-41D33263E0624452", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-01E6956CE01566AE", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-AB1AEBFE69601DF5", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-3A43E9F1CC82F443", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-581C3E8D2FB4ADD0", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-452F428ECDDECF0A", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-44D39753835D2E83", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-F61E0874BED1A2BA", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-06109FDF888362C6", "type": "PROCESS_GROUP_INSTANCE" },
+        { "id": "PROCESS_GROUP_INSTANCE-8C61657C2C77F269", "type": "PROCESS_GROUP_INSTANCE" }
+      ],
+      "isDiskOf": [
+        { "id": "DISK-6752D6C195DA0AB7", "type": "DISK" },
+        { "id": "DISK-F6401063B31E9EC7", "type": "DISK" },
+        { "id": "DISK-03435E43705B1E76", "type": "DISK" }
+      ],
+      "runsOn": [
+        { "id": "PROCESS_GROUP-AAC8C510D7F95A9E", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-F8B6DB593F0CFB25", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-661C8E43C3F35417", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-64A6E67B35941DDC", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-5E52B7B3495325E5", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-5ACB09C2146E186B", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-BCB80B54D7CB9A63", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-2465E2231408A540", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-4AADAFE9124E1CA5", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-7F1D053BFDC5DCAA", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-3F1F699C0B76B08E", "type": "PROCESS_GROUP" },
+        { "id": "PROCESS_GROUP-796EEC59E7724779", "type": "PROCESS_GROUP" }
+      ],
+      "isNetworkInterfaceOf": [{ "id": "NETWORK_INTERFACE-E09515EDCB5F479D", "type": "NETWORK_INTERFACE" }]
+    }
+  },
+  {
+    "entityId": "KUBERNETES_CLUSTER-46633836AB3EE44C",
+    "type": "KUBERNETES_CLUSTER",
+    "displayName": "rdb-pt",
+    "firstSeenTms": 1709776416508,
+    "lastSeenTms": 1747366568493,
+    "properties": {
+      "appEnabled": false,
+      "activeGateId": "0x66721a30",
+      "operatorVersion": "0.11.2",
+      "activeGateVersion": "1.299.7.20240925-183243",
+      "kubernetesMonitoringModes": ["Classic full stack"],
+      "kubernetesDistribution": "KUBERNETES",
+      "kubernetesClusterId": "6d768ac4-09ba-4e05-8247-7fbfabb47379",
+      "kubernetesApiMonitoringState": "ENABLED",
+      "kubernetesVersion": "v1.32.3-eks-bcf3d70",
+      "customizedName": "rdb-pt"
+    },
+    "tags": [],
+    "managementZones": [
+      {
+        "id": "-7151761915816887563",
+        "name": "RDB PT"
+      }
+    ],
+    "icon": {
+      "primaryIconType": "kubernetes-signet"
+    },
+    "fromRelationships": {
+      "isClusterOfService": [
+        {
+          "id": "SERVICE-6E96F4596ED26CD2",
+          "type": "SERVICE"
+        }
+      ],
+      "isClusterOfHost": [
+        {
+          "id": "HOST-0F210CBA3679587C",
+          "type": "HOST"
+        },
+        {
+          "id": "HOST-3337FCF1C6F623C2",
+          "type": "HOST"
+        }
+      ],
+      "isClusterOfCai": [
+        {
+          "id": "CLOUD_APPLICATION_INSTANCE-4B90C89C7223F759",
+          "type": "CLOUD_APPLICATION_INSTANCE"
+        }
+      ],
+      "isClusterOfNode": [
+        {
+          "id": "KUBERNETES_NODE-28E08C956A4FC292",
+          "type": "KUBERNETES_NODE"
+        }
+      ],
+      "isClusterOfCa": [
+        {
+          "id": "CLOUD_APPLICATION-53AC986327AA1254",
+          "type": "CLOUD_APPLICATION"
+        }
+      ],
+      "isClusterOfNamespace": [
+        {
+          "id": "CLOUD_APPLICATION_NAMESPACE-65382059F6482D9A",
+          "type": "CLOUD_APPLICATION_NAMESPACE"
+        }
+      ]
+    },
+    "toRelationships": {
+      "isCgiOfCluster": [
+        {
+          "id": "CONTAINER_GROUP_INSTANCE-4D6A219F8350DD7D",
+          "type": "CONTAINER_GROUP_INSTANCE"
+        },
+        {
+          "id": "CONTAINER_GROUP_INSTANCE-8A23AC42589A9066",
+          "type": "CONTAINER_GROUP_INSTANCE"
+        }
+      ]
+    }
+  },
+  {
+    "entityId": "NETWORK_INTERFACE-0F210A0CD33D69B7",
+    "type": "NETWORK_INTERFACE",
+    "displayName": "eth1",
+    "firstSeenTms": 1747361262155,
+    "lastSeenTms": 1747366536927,
+    "properties": {
+      "detectedName": "eth1",
+      "macAddress": "06:B6:E5:44:31:CB",
+      "ipAddress": ["100.45.39.160"]
+    },
+    "tags": [],
+    "icon": {
+      "primaryIconType": "network"
+    },
+    "fromRelationships": {
+      "isNetworkInterfaceOf": [
+        {
+          "id": "HOST-0F210CBA3679587C",
+          "type": "HOST"
+        }
+      ]
+    }
+  },
+  {
+    "entityId": "PROCESS_GROUP_INSTANCE-05C45F918283E2DB",
+    "type": "PROCESS_GROUP_INSTANCE",
+    "displayName": "vn.techcombank.pdms.Application rdb-pdms-service-dis-* (rdb-pdms-service-dis-99d6db648-w7bl6)",
+    "firstSeenTms": 1747361400000,
+    "lastSeenTms": 1747366500000,
+    "properties": {
+      "detectedName": "vn.techcombank.pdms.Application rdb-pdms-service-dis-* rdb-pdms-service-dis-* rdb-pdms-service-dis",
+      "bitness": "64",
+      "jvmVendor": "Eclipse Adoptium",
+      "metadata": [
+        {
+          "key": "KUBERNETES_POD_UID",
+          "value": "b76664b2-f5b5-491e-8a65-400049734171"
+        },
+        {
+          "key": "KUBERNETES_FULL_POD_NAME",
+          "value": "rdb-pdms-service-dis-99d6db648-w7bl6"
+        },
+        {
+          "key": "KUBERNETES_NAMESPACE",
+          "value": "rdb-pt"
+        },
+        {
+          "key": "COMMAND_LINE_ARGS",
+          "value": "java -cp /app/extras/*:/app/resources:/app/classes:/app/libs/* vn.techcombank.pdms.Application"
+        },
+        {
+          "key": "KUBERNETES_CLUSTER_ID",
+          "value": "6d768ac4-09ba-4e05-8247-7fbfabb47379"
+        },
+        {
+          "key": "KUBERNETES_BASE_POD_NAME",
+          "value": "rdb-pdms-service-dis-*"
+        },
+        {
+          "key": "KUBERNETES_RULE_RESULT",
+          "value": "rdb-pdms-service-dis-*"
+        },
+        {
+          "key": "EXE_NAME",
+          "value": "java"
+        },
+        {
+          "key": "EXE_PATH",
+          "value": "/usr/lib/jvm/temurin*_jre_amd*/bin/java"
+        },
+        {
+          "key": "JAVA_MAIN_CLASS",
+          "value": "vn.techcombank.pdms.Application"
+        },
+        {
+          "key": "KUBERNETES_CONTAINER_NAME",
+          "value": "rdb-pdms-service-dis"
+        }
+      ],
+      "installerVersion": "1.299.50.20240930-123825",
+      "ebpfHasPublicTraffic": false,
+      "hasPublicTraffic": false,
+      "softwareTechnologies": [
+        {
+          "type": "APACHE_KAFKA",
+          "edition": "Consumer",
+          "version": "3.6.2"
+        },
+        {
+          "type": "APACHE_TOMCAT",
+          "version": "10.1.26.0"
+        },
+        {
+          "type": "APACHE_HTTP_CLIENT_SYNC",
+          "version": "5.4.1"
+        },
+        {
+          "type": "REACTOR_CORE",
+          "version": "3.6.8"
+        },
+        {
+          "type": "JAVA_HTTPURLCONNETION"
+        },
+        {
+          "type": "APACHE_LOG4J",
+          "version": "2.21.1"
+        },
+        {
+          "type": "CONTAINERD"
+        },
+        {
+          "type": "JAVA",
+          "edition": "Eclipse Adoptium",
+          "version": "21.0.5"
+        },
+        {
+          "type": "JAVA",
+          "edition": "Adoptium",
+          "version": "21.0.5"
+        },
+        {
+          "type": "REDIS",
+          "edition": "Lettuce Client",
+          "version": "6.3.2.RELEASE"
+        },
+        {
+          "type": "ACTIVEMQ_CLIENT",
+          "edition": "bb-activemq-client, jakarta.jms",
+          "version": "1.0.7"
+        },
+        {
+          "type": "RABBIT_MQ",
+          "version": "5.19.0"
+        },
+        {
+          "type": "APACHE_KAFKA",
+          "edition": "Producer",
+          "version": "3.6.2"
+        },
+        {
+          "type": "QOS_LOGBACK",
+          "version": "1.4.14"
+        },
+        {
+          "type": "OK_HTTP_CLIENT",
+          "version": "4.12.0"
+        },
+        {
+          "type": "SPRING",
+          "edition": "Spring Boot",
+          "version": "3.2.8"
+        }
+      ],
+      "customPgMetadata": [
+        {
+          "value": "liquibase.docker.properties",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-file-config.txt"
+          }
+        },
+        {
+          "value": "debug",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/log-level"
+          }
+        },
+        {
+          "value": "false",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "cluster-autoscaler.kubernetes.io/safe-to-evict"
+          }
+        },
+        {
+          "value": "kv2/data/roc/services/pt/roc-pdms-service-dis",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-secret-config.txt"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject"
+          }
+        },
+        {
+          "value": "{{- with secret \"kv2/data/roc/services/pt/application\" }}\nspring.cloud.config.password: {{ index .Data.data \"spring.cloud.config.password\" }}\nspring.cloud.config.username: {{ index .Data.data \"spring.cloud.config.username\" }}\n{{- end }}\n",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-template-profile.properties"
+          }
+        },
+        {
+          "value": "kv2/data/roc/services/pt/application",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-secret-profile.properties"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-pre-populate"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-pre-populate-only"
+          }
+        },
+        {
+          "value": "2025-05-16T02:05:50Z",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "kubectl.kubernetes.io/restartedAt"
+          }
+        },
+        {
+          "value": "auth/tcb-pt-rdb-cluster",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/auth-path"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-init-first"
+          }
+        },
+        {
+          "value": "roc-secret-reading-role",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/role"
+          }
+        },
+        {
+          "value": "/injected/",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/secret-volume-path"
+          }
+        },
+        {
+          "value": "injected",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-status"
+          }
+        },
+        {
+          "value": "{{- with secret \"kv2/data/roc/services/pt/roc-pdms-service-dis\" }}\npassword: {{ index .Data.data \"spring.datasource.password.security\" }}{{ index .Data.data \"spring.datasource.password.operation\" }}\n{{- end }}\n",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-template-config.txt"
+          }
+        }
+      ],
+      "listenPorts": [8080, 8081],
+      "awsNameTag": "vn.techcombank.pdms.Application rdb-pdms-service-dis-* (rdb-pdms-service-dis-99d6db648-w7bl6)",
+      "processType": "JAVA",
+      "jvmClrVersion": "21.0.5"
+    },
+    "tags": [
+      {
+        "context": "KUBERNETES",
+        "key": "app.kubernetes.io/name",
+        "value": "application",
+        "stringRepresentation": "[Kubernetes]app.kubernetes.io/name:application"
+      },
+      {
+        "context": "KUBERNETES",
+        "key": "app.kubernetes.io/instance",
+        "value": "pt-rdb-pdms-service-dis",
+        "stringRepresentation": "[Kubernetes]app.kubernetes.io/instance:pt-rdb-pdms-service-dis"
+      }
+    ],
+    "managementZones": [
+      {
+        "id": "-7151761915816887563",
+        "name": "RDB PT"
+      }
+    ],
+    "icon": {
+      "primaryIconType": "apache-tomcat"
+    },
+    "fromRelationships": {
+      "isNetworkClientOf": [
+        {
+          "id": "PROCESS_GROUP_INSTANCE-F5CE5F9918AFDBED",
+          "type": "PROCESS_GROUP_INSTANCE"
+        },
+        {
+          "id": "PROCESS_GROUP_INSTANCE-05C45F918283E2DB",
+          "type": "PROCESS_GROUP_INSTANCE"
+        },
+        {
+          "id": "PROCESS_GROUP_INSTANCE-4258457ECAF40C0C",
+          "type": "PROCESS_GROUP_INSTANCE"
+        },
+        {
+          "id": "PROCESS_GROUP_INSTANCE-46FB54F9CBE2A11B",
+          "type": "PROCESS_GROUP_INSTANCE"
+        }
+      ],
+      "isProcessOf": [
+        {
+          "id": "HOST-3337FCF1C6F623C2",
+          "type": "HOST"
+        }
+      ],
+      "isMainPgiOfCgi": [
+        {
+          "id": "CONTAINER_GROUP_INSTANCE-F4A72F6B437EDB71",
+          "type": "CONTAINER_GROUP_INSTANCE"
+        }
+      ],
+      "isPgiOfCgi": [
+        {
+          "id": "CONTAINER_GROUP_INSTANCE-F4A72F6B437EDB71",
+          "type": "CONTAINER_GROUP_INSTANCE"
+        }
+      ],
+      "isInstanceOf": [
+        {
+          "id": "PROCESS_GROUP-85397FECE000D7AC",
+          "type": "PROCESS_GROUP"
+        }
+      ]
+    },
+    "toRelationships": {
+      "isNetworkClientOf": [
+        {
+          "id": "PROCESS_GROUP_INSTANCE-05C45F918283E2DB",
+          "type": "PROCESS_GROUP_INSTANCE"
+        }
+      ],
+      "runsOnProcessGroupInstance": [
+        {
+          "id": "SERVICE-6E96F4596ED26CD2",
+          "type": "SERVICE"
+        },
+        {
+          "id": "SERVICE-70FF75DA2EC457A3",
+          "type": "SERVICE"
+        }
+      ],
+      "isRuntimeOfPgi": [
+        {
+          "id": "RUNTIME_COMPONENT-CAF9A1101C13030F",
+          "type": "RUNTIME_COMPONENT"
+        }
+      ],
+      "runsOn": [
+        {
+          "id": "SERVICE_INSTANCE-2DF65CB37A158B5E",
+          "type": "SERVICE_INSTANCE"
+        },
+        {
+          "id": "SERVICE_INSTANCE-4C26F3A6C579DCD9",
+          "type": "SERVICE_INSTANCE"
+        }
+      ],
+      "isSoftwareComponentOfPgi": [
+        {
+          "id": "SOFTWARE_COMPONENT-0EE1669BF1E7CF04",
+          "type": "SOFTWARE_COMPONENT"
+        }
+      ]
+    }
+  },
+  {
+    "entityId": "PROCESS_GROUP-02F87BE5B2E14E01",
+    "type": "PROCESS_GROUP",
+    "displayName": "vn.techcombank.Application rdb-nfc-integration-dis-*",
+    "firstSeenTms": 1710312643414,
+    "lastSeenTms": 1747366536927,
+    "properties": {
+      "detectedName": "vn.techcombank.Application rdb-nfc-integration-dis-*",
+      "metadata": [
+        {
+          "key": "KUBERNETES_BASE_POD_NAME",
+          "value": "rdb-nfc-integration-dis-*"
+        },
+        {
+          "key": "KUBERNETES_NAMESPACE",
+          "value": "rdb-pt"
+        },
+        {
+          "key": "KUBERNETES_FULL_POD_NAME",
+          "value": "rdb-nfc-integration-dis-57f8ddf758-7psqj"
+        },
+        {
+          "key": "EXE_NAME",
+          "value": "java"
+        },
+        {
+          "key": "EXE_PATH",
+          "value": "/usr/lib/jvm/temurin*_jre_amd*/bin/java"
+        },
+        {
+          "key": "KUBERNETES_CONTAINER_NAME",
+          "value": "rdb-nfc-integration-dis"
+        },
+        {
+          "key": "COMMAND_LINE_ARGS",
+          "value": "java -cp /app/extras/*:/app/WEB-INF/classes:/app/WEB-INF/lib/* vn.techcombank.Application"
+        },
+        {
+          "key": "EXE_PATH",
+          "value": "/usr/lib/jvm/java-*-openjdk-amd*/bin/java"
+        },
+        {
+          "key": "KUBERNETES_POD_UID",
+          "value": "394c7ecf-3685-4255-903b-c11c84ec3477"
+        },
+        {
+          "key": "KUBERNETES_CLUSTER_ID",
+          "value": "6d768ac4-09ba-4e05-8247-7fbfabb47379"
+        },
+        {
+          "key": "KUBERNETES_FULL_POD_NAME",
+          "value": "rdb-nfc-integration-dis-79db5b4b6c-5p477"
+        },
+        {
+          "key": "COMMAND_LINE_ARGS",
+          "value": "java -cp /app/extras/*:/app/resources:/app/classes:/app/libs/* vn.techcombank.Application"
+        },
+        {
+          "key": "KUBERNETES_RULE_RESULT",
+          "value": "rdb-nfc-integration-dis-*"
+        },
+        {
+          "key": "KUBERNETES_POD_UID",
+          "value": "1081b31f-2dfb-430f-a8d4-1794907c2182"
+        },
+        {
+          "key": "KUBERNETES_CLUSTER_ID",
+          "value": "912e32ca-6d56-4705-95cc-4c230c3b60ad"
+        },
+        {
+          "key": "JAVA_MAIN_CLASS",
+          "value": "vn.techcombank.Application"
+        }
+      ],
+      "softwareTechnologies": [
+        {
+          "type": "OK_HTTP_CLIENT",
+          "version": "3.12.2"
+        },
+        {
+          "type": "APACHE_KAFKA",
+          "edition": "Consumer",
+          "version": "3.6.2"
+        },
+        {
+          "type": "APACHE_TOMCAT",
+          "version": "10.1.26.0"
+        },
+        {
+          "type": "APACHE_HTTP_CLIENT_SYNC",
+          "version": "5.4.1"
+        },
+        {
+          "type": "REACTOR_CORE",
+          "version": "3.6.8"
+        },
+        {
+          "type": "JAVA_HTTPURLCONNETION"
+        },
+        {
+          "type": "CONTAINERD"
+        },
+        {
+          "type": "JAVA",
+          "edition": "Eclipse Adoptium",
+          "version": "21.0.5"
+        },
+        {
+          "type": "JAVA",
+          "edition": "Adoptium",
+          "version": "21.0.5"
+        },
+        {
+          "type": "REDIS",
+          "edition": "Lettuce Client",
+          "version": "6.3.2.RELEASE"
+        },
+        {
+          "type": "ACTIVEMQ_CLIENT",
+          "edition": "bb-activemq-client, jakarta.jms",
+          "version": "1.0.7"
+        },
+        {
+          "type": "RABBIT_MQ",
+          "version": "5.19.0"
+        },
+        {
+          "type": "JAVA",
+          "edition": "Debian",
+          "version": "17.0.7"
+        },
+        {
+          "type": "APACHE_KAFKA",
+          "edition": "Producer",
+          "version": "3.6.2"
+        },
+        {
+          "type": "QOS_LOGBACK",
+          "version": "1.4.14"
+        },
+        {
+          "type": "SPRING",
+          "edition": "Spring Boot",
+          "version": "3.2.8"
+        }
+      ],
+      "customPgMetadata": [
+        {
+          "value": "liquibase.docker.properties",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-file-config.txt"
+          }
+        },
+        {
+          "value": "debug",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/log-level"
+          }
+        },
+        {
+          "value": "false",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "cluster-autoscaler.kubernetes.io/safe-to-evict"
+          }
+        },
+        {
+          "value": "kv2/data/roc/services/pt/roc-nfc-integration-dis",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-secret-config.txt"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject"
+          }
+        },
+        {
+          "value": "{{- with secret \"kv2/data/roc/services/pt/application\" }}\nspring.cloud.config.password: {{ index .Data.data \"spring.cloud.config.password\" }}\nspring.cloud.config.username: {{ index .Data.data \"spring.cloud.config.username\" }}\n{{- end }}\n",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-template-profile.properties"
+          }
+        },
+        {
+          "value": "kv2/data/roc/services/pt/application",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-secret-profile.properties"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-pre-populate"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-pre-populate-only"
+          }
+        },
+        {
+          "value": "2025-05-16T02:05:40Z",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "kubectl.kubernetes.io/restartedAt"
+          }
+        },
+        {
+          "value": "auth/tcb-pt-rdb-cluster",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/auth-path"
+          }
+        },
+        {
+          "value": "true",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-init-first"
+          }
+        },
+        {
+          "value": "roc-secret-reading-role",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/role"
+          }
+        },
+        {
+          "value": "/injected/",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/secret-volume-path"
+          }
+        },
+        {
+          "value": "injected",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-status"
+          }
+        },
+        {
+          "value": "{{- with secret \"kv2/data/roc/services/pt/roc-nfc-integration-dis\" }}\npassword: {{ index .Data.data \"spring.datasource.password.security\" }}{{ index .Data.data \"spring.datasource.password.operation\" }}\n{{- end }}\n",
+          "key": {
+            "source": "KUBERNETES",
+            "key": "vault.hashicorp.com/agent-inject-template-config.txt"
+          }
+        }
+      ],
+      "listenPorts": [8080, 8081, 5005]
+    },
+    "tags": [
+      {
+        "context": "KUBERNETES",
+        "key": "app.kubernetes.io/name",
+        "value": "application",
+        "stringRepresentation": "[Kubernetes]app.kubernetes.io/name:application"
+      },
+      {
+        "context": "KUBERNETES",
+        "key": "app.kubernetes.io/instance",
+        "value": "pt-rdb-nfc-integration-dis",
+        "stringRepresentation": "[Kubernetes]app.kubernetes.io/instance:pt-rdb-nfc-integration-dis"
+      }
+    ],
+    "managementZones": [
+      {
+        "id": "-7151761915816887563",
+        "name": "RDB PT"
+      }
+    ],
+    "icon": {
+      "primaryIconType": "apache-tomcat"
+    },
+    "fromRelationships": {
+      "isPgOfCa": [
+        {
+          "id": "CLOUD_APPLICATION-2A6E0F3D0385357F",
+          "type": "CLOUD_APPLICATION"
+        }
+      ],
+      "isPgOfCai": [
+        {
+          "id": "CLOUD_APPLICATION_INSTANCE-81AD81C059D180DA",
+          "type": "CLOUD_APPLICATION_INSTANCE"
+        }
+      ],
+      "isPgOfCg": [
+        {
+          "id": "CONTAINER_GROUP-22436B4EB682EE2E",
+          "type": "CONTAINER_GROUP"
+        }
+      ],
+      "runsOn": [
+        {
+          "id": "HOST-0F210CBA3679587C",
+          "type": "HOST"
+        }
+      ],
+      "isNetworkClientOfProcessGroup": [
+        {
+          "id": "PROCESS_GROUP-468D81C1A4574C66",
+          "type": "PROCESS_GROUP"
+        },
+        {
+          "id": "PROCESS_GROUP-02F87BE5B2E14E01",
+          "type": "PROCESS_GROUP"
+        }
+      ]
+    },
+    "toRelationships": {
+      "isNamespaceOfPg": [
+        {
+          "id": "CLOUD_APPLICATION_NAMESPACE-034FB6900D5D576B",
+          "type": "CLOUD_APPLICATION_NAMESPACE"
+        }
+      ],
+      "runsOn": [
+        {
+          "id": "SERVICE-94489A0E83C4952B",
+          "type": "SERVICE"
+        },
+        {
+          "id": "SERVICE-D68A07FC855B5198",
+          "type": "SERVICE"
+        },
+        {
+          "id": "SERVICE-525BC12CFC4500A2",
+          "type": "SERVICE"
+        },
+        {
+          "id": "SERVICE-E92DA75F98B40FC0",
+          "type": "SERVICE"
+        }
+      ],
+      "isNetworkClientOfProcessGroup": [
+        {
+          "id": "PROCESS_GROUP-85EFE38E26441EF8",
+          "type": "PROCESS_GROUP"
+        },
+        {
+          "id": "PROCESS_GROUP-11987B0B53609CDC",
+          "type": "PROCESS_GROUP"
+        },
+        {
+          "id": "PROCESS_GROUP-02F87BE5B2E14E01",
+          "type": "PROCESS_GROUP"
+        }
+      ],
+      "isInstanceOf": [
+        {
+          "id": "PROCESS_GROUP_INSTANCE-86664A2B3FBD0EB3",
+          "type": "PROCESS_GROUP_INSTANCE"
+        }
+      ]
+    }
+  }
+]
